@@ -1,0 +1,9 @@
+name,attack,health,weapon
+Skeleton,1,10,Bony fist
+Zombie,3,10,Dagger
+Raider,5,15,Sword
+Bandit,10,20,Axe
+Crestfallen,15,30,Giant Maul
+Slug,1,2,Tongue
+Rat,1,1,Teeth
+Goblin,2,5,Club
