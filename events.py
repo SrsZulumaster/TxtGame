@@ -2,11 +2,15 @@ from random import randrange
 import pandas as pd
 
 
+# Currently, winner of the fight is decided by having more attack that beats enemy health
+# more complex fighting needs dice rolls, chances and possibly effects
 def fight(enemy, player):
     while enemy.health > 0:
         if player.health > 0:
             player_action = input("Would you like to attack or block?")
-
+            # attacking currently all attacks hit
+            # missing needs implementation
+            # attack ranges need adding
             if player_action == "attack":
                 player.health -= enemy.attack
                 enemy.health -= player.attack
@@ -14,7 +18,7 @@ def fight(enemy, player):
                 print(f'The enemy health is {enemy.health}')
 
             elif player_action == "block":
-
+                # D6 roll to block an attack
                 if randrange(1, 7) > 4:
                     print("you managed to block the attack")
                     print(f'Your health is {player.health}')
@@ -31,7 +35,7 @@ def fight(enemy, player):
     return player.health
 
 
-# A function that generates an item for the player to find
+# A function that generates an item for the player to find from weapon_info.csv
 # Earlier implementation relied on an item list and a dictionary
 def item_pickup(player):
     weapon_df = pd.read_csv("Player_info/weapon_info.csv")
